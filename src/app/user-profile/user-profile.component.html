@@ -1,0 +1,23 @@
+
+ <img src="{{user.photo}}" alt="john" />
+ <!-- <img [src]="user.photo" alt="john" /> -->
+
+<h1> </h1>
+<div [hidden]="!displayAge" >Age : {{user.age}}</div>
+<div><b>Nom: {{user.name}}</b>  </div>
+<div><b>Prénom: {{user.firstName}}</b></div>
+<br>
+<div>{{user.quote}}</div>
+<br>
+<div> <input type="text" [(ngModel)]="user.quote"> </div>
+<br>
+
+<div id="grey">
+    <button (click)="hideAge()" >Afficher/Masquer mon âge </button>
+
+</div>
+
+
+
+
+
