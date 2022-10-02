@@ -1,0 +1,26 @@
+<p>Raclettte Party!</p>
+
+
+<h1>Food</h1>
+<ul>
+    <li>Pommes de terre</li>
+    <li  [ngStyle]="{backgroundColor:isThisIngredientVital ? 'red' : 'yellow'}">Raclette</li>
+    <li>Jambon</li>
+    <li [ngClass]="{'vital': isThisIngredientVital}">Cornichons</li>
+    <!-- // équivalent a [ngClass]="{'vital' : isThisIngredientVital === true}"   -->
+    <li>Chou-fleur</li>
+</ul>
+<h1>Guest</h1>
+<ul >
+    <li *ngIf="isGuestListDisplayed">Brenda</li>
+    <li>Dylan</li>
+    <li>Michel Drucker</li>
+    <li>Marc Aurèle</li>
+    <li>Julie</li>
+</ul>
+<h1>Playlist</h1>
+<ul>
+    <li *ngFor="let song of songList">
+        {{song}}
+    </li>
+</ul>

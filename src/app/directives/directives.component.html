@@ -1,0 +1,25 @@
+<p>directives works!</p>
+<div>
+    <h1 [ngStyle]="{'color' :isAdmin ? 'red' : 'black'}">
+        <!-- Salutation de l'admin quand c'est l'admin custom -->
+       {{ title }} <span *ngIf="isAdmin">Admin</span>!
+    </h1>
+    
+  </div>
+  
+  <div>
+     
+      <!-- Utilise une structural directive pour afficher "Edit" uniquement si isAdmin est à true. -->
+      <div  id="grey">
+          <button *ngIf="isAdmin"  >Edit </button>
+      
+      </div>
+       <div id="grey">
+          <button  >View </button>
+      
+      </div>
+      <div id="grey">
+        <button (click)="SignAdmin()" >Log in/out Admin </button>
+    
+    </div>
+    </div>
