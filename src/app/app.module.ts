@@ -6,9 +6,15 @@ import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { BlockComponentComponent } from './block-component/block-component.component';
-import { UserProfileComponent } from './user-profile/user-profile.component';
+import { UserProfileComponent } from './menu/user-profile/user-profile.component';
 import { RaclettComponent } from './raclett/raclett.component';
-import { DirectivesComponent } from './directives/directives.component';
+import { DirectivesComponent } from './menu/directives/directives.component';
+import { MenuComponent } from './menu/menu.component';
+
+//Roting*************************************
+import {RouterModule} from '@angular/router';
+import { ROUTES } from './app.routes';
+// *******************************************
 
 @NgModule({
   declarations: [
@@ -16,11 +22,17 @@ import { DirectivesComponent } from './directives/directives.component';
     BlockComponentComponent,
     UserProfileComponent,
     RaclettComponent,
-    DirectivesComponent
+    DirectivesComponent,
+    MenuComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule // Ajoute cette ligne là
+    FormsModule,
+    // Ajoute cette ligne là
+    // routing***************************************************************
+    RouterModule.forRoot(ROUTES)
+    ,
+    // routing*****************************************************************
 
   ],
   providers: [],
