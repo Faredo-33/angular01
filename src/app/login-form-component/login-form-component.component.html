@@ -1,0 +1,43 @@
+<h1>form Workshop</h1> 
+
+
+<form #myForm="ngForm" (ngSubmit)="myForm.valid && onSubmit()">
+
+<div>
+     Form submitted ? {{ myForm.submitted }}
+    Form valid ? {{ myForm.valid }}
+    Form invalid ? {{ myForm.invalid }}
+</div>
+   
+ 
+    <fieldset>
+        <label for="Password"> mot de passe : </label>
+        <input id="password" name="password" type="password" [(ngModel)]="model.password" #password="ngModel" required minlength="6">
+      </fieldset>
+    
+    <!-- Message d'erreurs de password -->
+      <div *ngIf="password.errors">
+        <span *ngIf="password.errors?.['required']">Le champ Password est requis</span>
+        <span *ngIf="myForm.submitted && password.errors?.['minlength']">La longueur de Password  est de 6 caractère minimal</span>
+
+      </div>
+    
+    
+      <fieldset>
+        <label for="contact-order">Email : </label>
+        <input id="email-user" name="email-user" type="email" [(ngModel)]="model.email" #email="ngModel" required email>
+      </fieldset>
+    
+      <!-- Message d'erreurs de contact/mail -->
+      <div *ngIf="email.errors">
+        <span *ngIf="email.errors?.['required']">Le champ email est requis</span>
+        <span *ngIf="myForm.submitted&& email.errors?.['email']">L'adresse email doit être valide</span>
+    
+
+      </div>
+    
+    
+      <button type="reset">Restaurer</button>
+      <button type="submit">Sauvegarder</button>
+    
+</form>
